@@ -20,7 +20,7 @@ check_updates() {
 # Install packages from a script
 install_packages() {
     # Install package1
-    sudo dnf install polybar
+    sudo dnf install polybar dunst
 
 }
 
