@@ -1,0 +1,95 @@
+format = """
+$sudo\
+$username\
+$hostname\
+$conda\
+$directory\
+$nodejs\
+$python\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+
+$cmd_duration $jobs $battery\
+$line_break\
+$character
+"""
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[fill]
+symbol = " "
+
+[directory]
+read_only = " "
+truncation_length = 4
+truncate_to_repo = true
+
+[character]
+# success_symbol = "[➜](bold green) "
+success_symbol = "[❯](bold green) "
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[❮](green)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch       ]($style) "
+
+[jobs]
+symbol = ""
+number_threshold = 1
+format = "[$symbol]($style)"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total       )]($style)\) '
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+format = "[$time]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+format = "[TUNNEL OPEN for $output]($style)"
+
+[python]
+symbol = "🐍"
+pyenv_version_name = true
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+
+[conda]
+format = "[$symbol$environment](dimmed green) "
+ignore_base = false
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "🔋 "
+
+[[battery.display]]
+threshold = 100
+style = "bold red"
+
+[sudo]
+style = "bold green"
+symbol = "🧙 "
+disabled = false
+format = "[$symbol]($style)"
