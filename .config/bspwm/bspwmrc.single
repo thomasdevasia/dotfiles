@@ -1,0 +1,64 @@
+#!/usr/bin/sh
+
+# sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         4
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# bspc config normal_border_color "#D23D3D"
+# pywal color
+. "${HOME}/.cache/wal/colors.sh"
+. "${HOME}/.fehbg"
+
+bspc config normal_border_color "$color0"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color1"
+
+# bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a vlc  state=floating rectangle=200x200+50+50
+bspc rule -a mpv  state=floating rectangle=631x470+185+188
+# bspc rule -a Chromium desktop='^2'
+# bspc rule -a mplayer2 state=floating
+# bspc rule -a Kupfer.py focus=on
+# bspc rule -a Screenkey manage=off
+
+# rounded corners
+# bspc config border_radius 10
+# AutoStart applications
+sxhkd &
+# start compositor
+# picom --config $HOME/.config/picom/picom.conf &
+# while pgrep -u $UID -x picom >/dev/null; do sleep 1; done
+# picom -b --experimental-backends --config $HOME/.config/picom/picom.conf &
+# picom --experimental-backends --config ~/.config/picom/picom.config &
+# picom --animations --animation-for-open-window fly-in -b --experimental-backends --config ~/.config/picom/picom.conf &
+picom --experimental-backends --config ~/.config/picom/picom.conf &
+
+# wallpaper
+sh /home/thomasdevasia/.fehbg &
+# sh $HOME/.local/share/wallpaper-selector/set_wallpaper_cache.sh &
+
+# notification daemon
+dunst &
+polybar edp &
+# bash ~/.config/polybar/launch.sh --shades &
+# bash ~/.config/polybar/launch.sh --shapes &
+# vmware-user-suid-wrapper &
+# for keybord
+setxkbmap us &
+# for cursor
+xsetroot -cursor_name left_ptr &
+
+# for touchpad
+xinput set-prop "SYNA2BA6:00 06CB:CE2D Touchpad" "libinput Tapping Enabled" 1 &
+xinput set-prop "SYNA2BA6:00 06CB:CE2D Touchpad" "libinput Natural Scrolling Enabled" 1 &
+
+# authentication agent
+# /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+/usr/libexec/polkit-gnome-authentication-agent-1 &

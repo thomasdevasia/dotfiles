@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=sh /home/thomasdevasia/.local/share/wallpaper-selector/set_wallpaper_hyprland.sh 
+Name=Wallpaper Selector Hyprland
+Icon=/home/thomasdevasia/.local/share/wallpaper-selector/wallpaper_selector.svg

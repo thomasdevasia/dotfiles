@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # program launcher
 # super + @space
@@ -130,6 +130,30 @@ super + ctrl + shift + {Left,Down,Up,Right}
 
 # power menu
 super + shift + l
-	~/.config/rofi/powermenu/type-4/powermenu.sh
+	bash /home/thomasdevasia/.config/rofi/powermenu/type-1/powermenu.sh
 
+# brightness
+XF86MonBrightness{Up,Down}
+	sh /home/thomasdevasia/.config/sxhkd/changebrightness {up,down}
 
+# volume control
+XF86AudioRaiseVolume
+	sh /home/thomasdevasia/.config/sxhkd/changevolume up
+
+XF86AudioLowerVolume
+	sh /home/thomasdevasia/.config/sxhkd/changevolume down
+
+XF86AudioMute
+	amixer set Master toggle
+
+# ranger file manager
+super + e
+	kitty ranger
+
+# clipboard manager copyQ
+super + v
+	copyq --start-server show
+
+# Lockscreen
+super + l
+	/home/thomasdevasia/.local/bin/betterlockscreen -l blur

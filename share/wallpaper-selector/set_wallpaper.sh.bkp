@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Run Pywal to generate and apply a color scheme
+echo "before wal"
+selection=$(ls ~/Pictures | /home/thomasdevasia/.config/rofi/dmenu/launcher.sh)
+~/.local/bin/wal -i ~/Pictures/$selection
+feh --bg-fill ~/Pictures/$selection
+xdotool keydown Super
+xdotool keydown Alt
+xdotool keydown Control
+xdotool key r
+
+xdotool keyup Super
+xdotool keyup Alt
+xdotool keyup Control

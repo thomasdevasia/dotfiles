@@ -15,6 +15,4 @@ dir="$HOME/.config/rofi/dmenu"
 theme='style-5'
 
 ## Run
-rofi \
-    -show -dmenu \
-    -theme ${dir}/${theme}.rasi
+rofi -show -dmenu -p "test" -theme ${dir}/${theme}.rasi 

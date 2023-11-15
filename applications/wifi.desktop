@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=sh /home/thomasdevasia/.local/share/wifi-selector/select-wifi.sh
+Name=Wifi
+Icon=/home/thomasdevasia/.local/share/wifi-selector/wifi.svg
