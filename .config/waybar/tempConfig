@@ -33,17 +33,13 @@
   "format": "{name} {icon}",
   "format-icons": {
       "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
 "urgent": "",
 "active": "",
 "default": ""
   },
-  "persistent_workspaces": {
-       "*": 5
-  }       
+  // "persistent_workspaces": {
+  //      "*": 5
+  // }       
 },
 "disk": {
   "interval": 30,

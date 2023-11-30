@@ -242,3 +242,4 @@ export PATH=$PATH:$HOME/go/bin
 
 # backup script
 alias backup="bash /home/thomasdevasia/Desktop/Projects/dotfiles/backup.sh"
+
