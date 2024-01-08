@@ -38,7 +38,7 @@ sxhkd &
 # picom -b --experimental-backends --config $HOME/.config/picom/picom.conf &
 # picom --experimental-backends --config ~/.config/picom/picom.config &
 # picom --animations --animation-for-open-window fly-in -b --experimental-backends --config ~/.config/picom/picom.conf &
-# picom --experimental-backends --config ~/.config/picom/picom.conf &
+picom --experimental-backends --config ~/.config/picom/picom.conf &
 
 # wallpaper
 sh /home/thomasdevasia/.fehbg &
