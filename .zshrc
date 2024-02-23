@@ -82,6 +82,11 @@ z4h bindkey z4h-cd-forward Alt+Right  # cd into the next directory
 z4h bindkey z4h-cd-up      Alt+Up     # cd into the parent directory
 z4h bindkey z4h-cd-down    Alt+Down   # cd into a child directory
 
+function cd_code() {
+	bash /home/thomasdevasia/scripts/project-terminal.sh
+}
+# z4h bindkey cd_code  Alt+c   # cd into a child directory
+
 # Autoload functions.
 autoload -Uz zmv
 
@@ -243,3 +248,10 @@ export PATH=$PATH:$HOME/go/bin
 # backup script
 alias backup="bash /home/thomasdevasia/Desktop/Projects/dotfiles/backup.sh"
 
+function cpwd_to_clipboard() {
+  echo -n $(pwd) | wl-copy
+}
+
+alias cpwd=cpwd_to_clipboard 
+
+alias cc="source /home/thomasdevasia/scripts/project-terminal.sh"

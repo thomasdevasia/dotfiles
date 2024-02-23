@@ -21,7 +21,7 @@ echo $selection
 # pywal selection to generate color scheme
 ~/.local/bin/wal -i "$selection"
 
-python /home/thomasdevasia/.local/share/wallpaper-selector/change_wallpaper.py "$selection"
+python /home/thomasdevasia/scripts/change_wallpaper.py "$selection"
 
 # reloading hyprpaper
 # killall hyprpaper
