@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Use amixer to logarithmically adjust laptop volume.
+# and send a notification displaying the current volume level after.
+
+send_notification() {
+    
+    regex='\[([0-9]+%)\]'
+    if [[ $1 =~ $regex ]]; then
+        volume="${BASH_REMATCH[1]}"
+        # echo "First percentage volume found: $volume"
+        dunstify -a "changevolume" -u low -r 9991 -h int:value:"$volume" -i "Volume1" "Volume: $volume%" -t 2000
+
+    else
+        echo "No percentage value found."
+    fi
+	# brightness=$(printf "%.0f\n" "$(brillo -G)")
+	# dunstify -a "changebrightness" -u low -r 9991 -h int:value:"$brightness" -i "brightness-$1" "Brightness: $brightness%" -t 2000
+}
+
+case $1 in
+up)
+	output=$(amixer set Master 5%+)
+	send_notification "$output"
+	;;
+down)
+	output=$(amixer set Master 5%-)
+	send_notification "$output"
+	;;
+esac
