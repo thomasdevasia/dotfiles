@@ -162,3 +162,11 @@ alias cpwd=cpwd_to_clipboard
 
 alias cc="source /home/thomasdevasia/scripts/project-terminal.sh"
 
+# change cursor 
+change_cursor(){
+  cursor_name=$1
+  hyprctl setcursor "$cursor_name" 24
+  gsettings set org.gnome.desktop.interface cursor-theme "$cursor_name"
+  gsettings set org.gnome.desktop.interface cursor-size 24
+}
+alias cursor_change=change_cursor
