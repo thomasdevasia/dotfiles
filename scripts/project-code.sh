@@ -2,7 +2,7 @@
 
 # List folders in ~/projects and ~/.config
 # folders=$(find ~/Desktop/Projects/outlook_graph ~/Desktop/Projects/ ~/.config ~/scripts -maxdepth 1 -type d | awk -F/ '{print $NF " :: " $0}')
-folders=$(find ~/Desktop/Projects/ ~/.config ~/scripts -maxdepth 1 -type d | awk -F/ '{print $NF " :: " $0}')
+folders=$(find -L ~/Desktop/Projects/ ~/.config ~/scripts -maxdepth 1 -type d | awk -F/ '{print $NF " :: " $0}')
 
 # Use rofi to let the user select one of the folders
 selected=$(echo "$folders" | wofi --dmenu -p "Select a folder:" | awk -F' :: ' '{print $2}')
@@ -17,9 +17,12 @@ if [ -n "$selected" ]; then
     # hyprctl dispatch exec [ workspace 2 silent ] "kitty --detach -d \"$selected\" nvim . "
     #
     # hyprctl dispatch exec [ workspace 3 silent ] "kitty \"$selected\" --detach"
+    # get name of the last folder
+    projectName=$(echo "$selected" | awk -F/ '{print $NF}' | tr ' ' '_')
+    # echo $projectName
 
     hyprctl dispatch exec "kitty --detach -d \"$selected\" nvim . "
-    hyprctl dispatch exec "kitty \"$selected\" --detach"
+    hyprctl dispatch exec "kitty --detach -d \"$selected\" tmux new-session -A -s $projectName"
 
   else
     # env -u WAYLAND_DISPLAY /home/thomasdevasia/.local/bin/zed "$selected"
