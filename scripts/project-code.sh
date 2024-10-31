@@ -29,6 +29,7 @@ if [ -n "$selected" ]; then
     # nvim "$selected"
     # kitty -e nvim "$selected"
     code-insiders "$selected"
+    hyprctl dispatch exec "kitty --detach -d \"$selected\" tmux new-session -A -s $projectName"
   fi
   # code-insiders "$selected"
   # /home/thomasdevasia/.local/bin/zed "$selected"
