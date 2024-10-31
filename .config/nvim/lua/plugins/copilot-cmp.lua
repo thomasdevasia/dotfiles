@@ -35,4 +35,13 @@ return {
       priority = 100,
     })
   end,
+
+  cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+      ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
+      ["<CR>"] = function(fallback)
+        fallback()
+      end,
+    }),
+  }),
 }
