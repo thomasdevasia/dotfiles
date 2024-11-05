@@ -11,7 +11,7 @@ vim.keymap.set("n", "<c-`>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<C-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 -- comment using ctrl+/ in normal and visual mode by running emulation key gcc
-vim.keymap.set("n", "<c-/>", "gccj", { remap = true, desc = "Toggle comment for line" })
+vim.keymap.set("n", "<c-/>", "gcc", { remap = true, desc = "Toggle comment for line" })
 vim.keymap.set("v", "<c-/>", "gc", { remap = true, desc = "Toggle comment for selection" })
 
 -- vim.keymap.del("i", "<CR>")
