@@ -15,3 +15,11 @@ vim.keymap.set("n", "<c-/>", "gcc", { remap = true, desc = "Toggle comment for l
 vim.keymap.set("v", "<c-/>", "gc", { remap = true, desc = "Toggle comment for selection" })
 
 -- vim.keymap.del("i", "<CR>")
+
+local builtin = require("telescope.builtin")
+-- leader leader to open buffer
+-- vim.keymap.set("n", "<leader><leader>", "<cmd>BufferLinePick<cr>", { desc = "Open Buffer" })
+vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+
+-- delete buffer
+vim.keymap.set("n", "<leader>dd", "<cmd>bd<cr>", { desc = "Delete buffer" })
