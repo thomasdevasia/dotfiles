@@ -1,14 +1,14 @@
-local cmp = require("cmp")
-
-cmp.setup({
-  mapping = cmp.mapping.preset.insert({
-    ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
-    ["<CR>"] = function(fallback)
-      fallback()
-    end,
-  }),
-})
-
+-- local cmp = require("cmp")
+--
+-- cmp.setup({
+--   mapping = cmp.mapping.preset.insert({
+--     ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
+--     ["<CR>"] = function(fallback)
+--       fallback()
+--     end,
+--   }),
+-- })
+--
 return {
   "nvim-cmp",
   dependencies = {
@@ -36,12 +36,12 @@ return {
     })
   end,
 
-  cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-      ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
-      ["<CR>"] = function(fallback)
-        fallback()
-      end,
-    }),
-  }),
+  -- cmp.setup({
+  --   mapping = cmp.mapping.preset.insert({
+  --     ["<C-CR>"] = cmp.mapping.confirm({ select = true }),
+  --     ["<CR>"] = function(fallback)
+  --       fallback()
+  --     end,
+  --   }),
+  -- }),
 }

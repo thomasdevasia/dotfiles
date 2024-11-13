@@ -1,4 +1,4 @@
--- changing the key mappings for nvim-cmp default key mappings
+-- -- changing the key mappings for nvim-cmp default key mappings
 return {
   {
     "hrsh7th/nvim-cmp",
