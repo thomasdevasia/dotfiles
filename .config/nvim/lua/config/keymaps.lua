@@ -13,6 +13,7 @@ vim.keymap.set("t", "<C-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 -- comment using ctrl+/ in normal and visual mode by running emulation key gcc
 vim.keymap.set("n", "<c-/>", "gcc", { remap = true, desc = "Toggle comment for line" })
 vim.keymap.set("v", "<c-/>", "gc", { remap = true, desc = "Toggle comment for selection" })
+vim.keymap.set("i", "<c-/>", "<esc>gccA", { remap = true, desc = "Toggle comment for line" })
 
 -- vim.keymap.del("i", "<CR>")
 
@@ -29,3 +30,6 @@ vim.keymap.set("n", "<C-left>", "<C-w><C-h>", { desc = "Move focus to the left w
 vim.keymap.set("n", "<C-right>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-down>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-up>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- find files using grep
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find file using grep" })
