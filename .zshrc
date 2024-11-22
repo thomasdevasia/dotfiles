@@ -170,3 +170,4 @@ change_cursor(){
   gsettings set org.gnome.desktop.interface cursor-size 24
 }
 alias cursor_change=change_cursor
+. "/home/thomasdevasia/.deno/env"
