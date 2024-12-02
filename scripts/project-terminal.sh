@@ -9,3 +9,7 @@ folder_path="${selected_folder#*:: }"
 
 # echo "Selected folder path: -$folder_path"
 cd "$folder_path"
+
+if [ "$1" = "nvim" ]; then
+  nvim "$folder_path"
+fi

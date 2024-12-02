@@ -161,6 +161,7 @@ function cpwd_to_clipboard() {
 alias cpwd=cpwd_to_clipboard 
 
 alias cc="source /home/thomasdevasia/scripts/project-terminal.sh"
+alias ccc="source /home/thomasdevasia/scripts/project-terminal.sh nvim"
 
 # change cursor 
 change_cursor(){
