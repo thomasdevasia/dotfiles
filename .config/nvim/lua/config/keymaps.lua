@@ -2,13 +2,17 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.del("n", "<c-/>")
 -- start terminal in normal mode using <C-`>
-local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
-end
-vim.keymap.set("n", "<c-`>", lazyterm, { desc = "Terminal (Root Dir)" })
-vim.keymap.set("t", "<C-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+-- local lazyterm = function()
+--   LazyVim.terminal(nil, { cwd = LazyVim.root() })
+-- end
+vim.keymap.del("n", "<c-/>")
+vim.keymap.set("n", "<c-`>", function()
+  Snacks.terminal()
+end, { desc = "Terminal (Root Dir)" })
+vim.keymap.set("t", "<c-`>", function()
+  Snacks.terminal()
+end, { desc = "Hide Terminal" })
 
 -- comment using ctrl+/ in normal and visual mode by running emulation key gcc
 vim.keymap.set("n", "<c-/>", "gcc", { remap = true, desc = "Toggle comment for line" })
@@ -33,3 +37,38 @@ vim.keymap.set("n", "<C-up>", "<C-w><C-k>", { desc = "Move focus to the upper wi
 
 -- find files using grep
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find file using grep" })
+
+-- scratch pad
+vim.keymap.set("n", "<leader>.", function()
+  Snacks.scratch()
+end, { desc = "Open Scratchpad" })
+
+-- do kind of ctrl-d
+-- vim.keymap.set("v", "<C-d>", function()
+--   local start_pos = vim.fn.getpos("'<")
+--   local end_pos = vim.fn.getpos("'>")
+--   local lines = vim.fn.getline(start_pos[2], end_pos[2])
+--
+--   -- Ensure `lines` is a table
+--   if type(lines) ~= "table" then
+--     lines = { lines }
+--   end
+--
+--   -- Extract the selected text
+--   if #lines == 1 then
+--     -- Single-line selection
+--     lines[1] = string.sub(lines[1], start_pos[3], end_pos[3])
+--   else
+--     -- Multi-line selection: adjust first and last line
+--     lines[1] = string.sub(lines[1], start_pos[3])
+--     lines[#lines] = string.sub(lines[#lines], 1, end_pos[3])
+--   end
+--
+--   local selected_text = table.concat(lines, "\n")
+--
+--   -- perform esacpe button
+--   -- local esc = vim.api.nvim_replace_termcodes("<esc>", true, false, true)
+--   -- vim.api.nvim_feedkeys(esc, "x", false)
+--   -- Snacks.notify("Selected text: " .. selected_text)
+--   vim.cmd(":%s/" .. vim.fn.escape(selected_text, "/") .. "/")
+-- end, { noremap = true, silent = false, desc = "Search and replace selected text" })
