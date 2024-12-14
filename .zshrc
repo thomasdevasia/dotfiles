@@ -164,6 +164,7 @@ alias cc="source /home/thomasdevasia/scripts/project-terminal.sh"
 bindkey -s '^P' 'cc\n'
 alias ccc="source /home/thomasdevasia/scripts/project-terminal.sh nvim"
 # bindkey -s '^P' 'ccc\n'
+bindkey -s '^n' 'nvim .\n'
 
 # change cursor 
 change_cursor(){
