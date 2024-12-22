@@ -1,1 +1,4 @@
-../../dotfiles/.config/yazi/yazi.toml
+[opener]
+play = [
+  { run = 'vlc "$@"', orphan = true, for = "unix" },
+]

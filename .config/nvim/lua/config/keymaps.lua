@@ -43,6 +43,9 @@ vim.keymap.set("n", "<leader>.", function()
   Snacks.scratch()
 end, { desc = "Open Scratchpad" })
 
+-- opening oil
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Open Oil" })
+
 -- do kind of ctrl-d
 -- vim.keymap.set("v", "<C-d>", function()
 --   local start_pos = vim.fn.getpos("'<")

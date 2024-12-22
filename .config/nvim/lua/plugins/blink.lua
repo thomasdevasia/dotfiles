@@ -9,10 +9,12 @@ return {
         preset = "default",
         ["CR"] = {},
         ["<C-CR>"] = { "select_and_accept" },
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
       },
       sources = {
         compat = { "supermaven" },
-        default = { "copilot" },
+        default = { "copilot", "supermaven" },
         providers = {
           supermaven = {
             kind = "Supermaven",
