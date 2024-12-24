@@ -6,7 +6,12 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "zitchdog-night",
     },
+  },
+  {
+    "theamallalgi/zitchdog",
+    lazy = false,
+    priority = 1000,
   },
 }
