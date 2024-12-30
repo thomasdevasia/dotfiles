@@ -166,6 +166,8 @@ alias ccc="source /home/thomasdevasia/scripts/project-terminal.sh nvim"
 # bindkey -s '^P' 'ccc\n'
 bindkey -s '^n' 'nvim .\n'
 
+bindkey -s '^e' 'yazi .\n'
+
 # change cursor 
 change_cursor(){
   cursor_name=$1
