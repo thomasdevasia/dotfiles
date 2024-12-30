@@ -56,11 +56,11 @@ with open(config_file, "w") as f:
 
 # hyprlock wallpaper change
 
-with open(os.path.expanduser("~/.config/hypr/hyprlock.conf"), 'r') as file:
-    content = file.read()
-
-content = re.sub(r'path = (/(.*))', f'path = {wallpaper}', content)
-
-with open(os.path.expanduser("~/.config/hypr/hyprlock.conf"), 'w') as file:
-    file.write(content)
-
+# with open(os.path.expanduser("~/.config/hypr/hyprlock.conf"), 'r') as file:
+#     content = file.read()
+#
+# content = re.sub(r'path = (/(.*))', f'path = {wallpaper}', content)
+#
+# with open(os.path.expanduser("~/.config/hypr/hyprlock.conf"), 'w') as file:
+#     file.write(content)
+#

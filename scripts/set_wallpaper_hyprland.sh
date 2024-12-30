@@ -14,7 +14,7 @@ fi
 
 # ranger to save image in file
 # kitty ranger --choosefile=/home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
-kitty /home/thomasdevasia/.cargo/bin/yazi --chooser-file /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
+ghostty -e /home/thomasdevasia/.cargo/bin/yazi --chooser-file /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
 selection=$(cat /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper)
 
 echo $selection
@@ -42,5 +42,8 @@ cp ~/.cache/wal/colors-waybar.css ~/.config/swaync/colors-wayabr.css
 
 # running change colors script
 python /home/thomasdevasia/scripts/change_colors.py
+
+# create a pallete for ghostty
+python ~/scripts/create_ghostty_pallete.py
 
 notify-send "Wallpaper changed to $selection"
