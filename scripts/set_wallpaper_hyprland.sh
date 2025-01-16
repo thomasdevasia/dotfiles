@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:/home/thomasdevasia/.local/bin:/home/thomasdevasia/.cargo/bin
+
 # Run Pywal to generate and apply a color scheme
 echo "before wal"
 
@@ -14,13 +16,13 @@ fi
 
 # ranger to save image in file
 # kitty ranger --choosefile=/home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
-ghostty -e /home/thomasdevasia/.cargo/bin/yazi --chooser-file /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
+ghostty -e yazi --chooser-file /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper /home/thomasdevasia/Pictures
 selection=$(cat /home/thomasdevasia/.cache/wallpaper-selector/.wallpaper)
 
 echo $selection
 
 # pywal selection to generate color scheme
-~/.local/bin/wal -i "$selection"
+wal -i "$selection"
 
 python /home/thomasdevasia/scripts/change_wallpaper.py "$selection"
 

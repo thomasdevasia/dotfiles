@@ -57,6 +57,9 @@ end, { desc = "Find file in root" })
 vim.keymap.set("n", "<leader>]", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>[", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 
+-- open explorer in full screen
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree<cr>", { desc = "Open explorer" })
+
 -- do kind of ctrl-d
 -- vim.keymap.set("v", "<C-d>", function()
 --   local start_pos = vim.fn.getpos("'<")

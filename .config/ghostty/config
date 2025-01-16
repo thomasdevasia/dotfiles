@@ -28,7 +28,7 @@ keybind = ctrl+alt+left=previous_tab
 # keybind = ctrl+alt+up=toggle_tab_overview
 keybind = ctrl+alt+down=close_surface
 keybind = ctrl+shift+minus=new_split:down
-keybind = ctrl+shift+equal=new_split:right
+keybind = ctrl+shift+\=new_split:right
 keybind = ctrl+shift+left=goto_split:left
 keybind = ctrl+shift+right=goto_split:right
 keybind = ctrl+shift+up=goto_split:top
