@@ -7,6 +7,7 @@
 --   LazyVim.terminal(nil, { cwd = LazyVim.root() })
 -- end
 vim.keymap.del("n", "<c-/>")
+vim.keymap.del("n", "<leader>fe")
 vim.keymap.set("n", "<c-`>", function()
   Snacks.terminal()
 end, { desc = "Terminal (Root Dir)" })
@@ -49,13 +50,15 @@ vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { desc = "Open Oil" })
 -- find files cwd
 vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find file" })
 -- find files root
-vim.keymap.set("n", "<leader>fF", function()
+vim.keymap.set("n", "<leader>fd", function()
   builtin.find_files({ cwd = LazyVim.root() })
 end, { desc = "Find file in root" })
 
 -- next buffers
 vim.keymap.set("n", "<leader>]", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>[", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<M-right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+vim.keymap.set("n", "<M-left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 
 -- open explorer in full screen
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree<cr>", { desc = "Open explorer" })

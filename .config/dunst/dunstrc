@@ -1,3 +1,6 @@
+window = 600
+height = 500
+
 [global]
 frame_color = "#8AADF4"
 separator_color= frame
