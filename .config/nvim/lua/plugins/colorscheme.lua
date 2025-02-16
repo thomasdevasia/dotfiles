@@ -6,8 +6,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "zitchdog-night",
-      colorscheme = "gruvbox",
+      colorscheme = "zitchdog-night",
+      -- colorscheme = function() end,
     },
   },
   {
