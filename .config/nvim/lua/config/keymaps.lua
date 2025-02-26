@@ -61,7 +61,13 @@ vim.keymap.set("n", "<M-right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next 
 vim.keymap.set("n", "<M-left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Previous buffer" })
 
 -- open explorer in full screen
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree<cr>", { desc = "Open explorer" })
+vim.keymap.set("n", "<leader>ee", "<cmd>Neotree<cr>", { desc = "Open explorer" })
+vim.keymap.set(
+  "n",
+  "<leader>er",
+  "<cmd>Neotree source=filesystem reveal=true position=current<cr>",
+  { desc = "Open explorer" }
+)
 
 -- do kind of ctrl-d
 -- vim.keymap.set("v", "<C-d>", function()
